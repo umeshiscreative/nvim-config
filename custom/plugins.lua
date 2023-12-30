@@ -52,8 +52,9 @@ local plugins = {
     opts = {
       ensure_installed = {
         "eslint-lsp",
+        "eslint_d",
         "js-debug-adapter",
-        "prettier",
+        "prettierd",
         "typescript-language-server",
         "pyright",--For Python,
         "gopls", --For Golang
@@ -124,29 +125,25 @@ local plugins = {
         "javascript",
         "typescript",
         "tsx",
+        "go",
+        "gomod",
+        "gosum",
+        "gowork",
+        "html",
+        "make",
+        "python",
+        "yaml",
+        "dockerfile",
       }
       return opts
     end,
   },
   {
-    "windwp/nvim-ts-autotag",
-    ft = {"javascript", "javascriptreact", "typescript", "typescriptreact"},
+    "anuvyklack/pretty-fold.nvim",
+    lazy = false,
     config = function()
-      require("nvim-ts-autotag").setup()
-    end,
+      require("pretty-fold").setup()
+    end
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function()
-      local opts = require "plugins.configs.treesitter"
-      opts.ensure_installed = {
-        "lua",
-        "javascript",
-        "typescript",
-        "tsx",
-      }
-      return opts
-    end,
-  }
 }
 return plugins
