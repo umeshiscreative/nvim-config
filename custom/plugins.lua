@@ -1,5 +1,9 @@
 local plugins = {
   {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
+  {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
@@ -25,6 +29,7 @@ local plugins = {
       require("core.utils").load_mappings("dap")
     end
   },
+  --[[
   {
     "jose-elias-alvarez/null-ls.nvim",
     event = "VeryLazy",
@@ -33,6 +38,7 @@ local plugins = {
        return require "custom.configs.null-ls"
     end,
   },
+  
   {
     "mhartington/formatter.nvim",
     event = "VeryLazy",
@@ -40,6 +46,7 @@ local plugins = {
       return require "custom.configs.formatter"
     end
   },
+  --]]
   {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
@@ -54,6 +61,7 @@ local plugins = {
         "eslint-lsp",
         "eslint_d",
         "js-debug-adapter",
+        "prettier",
         "prettierd",
         "typescript-language-server",
         "pyright",--For Python,
@@ -100,15 +108,13 @@ local plugins = {
       require "custom.configs.catppuccin"
     end
   },
-  --[[
-  --{
+  {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
     end,
   },
-  --]]
   {
     "windwp/nvim-ts-autotag",
     ft = {"javascript", "javascriptreact", "typescript", "typescriptreact"},
